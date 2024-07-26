@@ -10,4 +10,8 @@
     <PackageReference Include="EntityFramework" Version="6.5.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\sales.core\sales.core.csproj" />
+  </ItemGroup>
+
 </Project>
