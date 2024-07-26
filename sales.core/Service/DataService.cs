@@ -27,6 +27,7 @@ namespace sales.core.Service
             _pizzaTypeRepository = pizzaTypeRepository;
             _pizzaRepository = pizzaRepository;
             _orderDetailsRepository = orderDetailsRepository;
+            _orderRepository = orderRepository;
         }
         public async Task<ServiceResponseViewModel<PizzaType>> UploadPizzaTypeData(Stream file) 
         {
@@ -34,7 +35,7 @@ namespace sales.core.Service
             try
             {
                 var records = Helpers.FileHelper<PizzaType>.ExtractFile(file);
-                await _pizzaTypeRepository.AddRange(records);
+                model.data = await _pizzaTypeRepository.AddRange(records);
                 model.success = true;
             }
             catch(Exception e)
@@ -49,8 +50,7 @@ namespace sales.core.Service
             try
             {
                 var records = Helpers.FileHelper<Pizza>.ExtractFile(file);
-                await _pizzaRepository.AddRange(records);
-                model.data = records;
+                model.data = await _pizzaRepository.AddRange(records);
                 model.success = true;
             }
             catch (Exception e)
@@ -65,8 +65,7 @@ namespace sales.core.Service
             try
             {
                 var records = Helpers.FileHelper<Order>.ExtractFile(file).ToList();
-                await _orderRepository.AddRange(records);
-                model.data = records;
+                model.data = await _orderRepository.AddRange(records);
                 model.success = true;
             }
             catch (Exception e)
@@ -81,8 +80,7 @@ namespace sales.core.Service
             try
             {
                 var records = Helpers.FileHelper<OrderDetails>.ExtractFile(file).ToList();
-                await _orderDetailsRepository.AddRange(records);
-                model.data = records;
+                model.data = await _orderDetailsRepository.AddRange(records);
                 model.success = true;
             }
             catch (Exception e)
