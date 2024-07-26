@@ -1,4 +1,6 @@
 using sales.core.Interface.IRepository;
+using sales.core.Interface.IService;
+using sales.core.Service;
 using sales.infrastructure.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +17,7 @@ builder.Services.AddScoped<IPizzaTypeRepository, PizzaTypeRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderDetailsRepository, OrderDetailsRepository>();
 
+builder.Services.AddScoped<IDataService, DataService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
