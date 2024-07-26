@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interface\IRepository\" />
     <Folder Include="Interface\IService\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
