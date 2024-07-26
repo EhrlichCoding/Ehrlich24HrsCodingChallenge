@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace sales.infrastructure.Repository
 {
-    internal class OrderRepository : GenericRepository<Order>, IOrderRepository
+    public class OrderRepository : GenericRepository<Order>, IOrderRepository
     {
     }
 }

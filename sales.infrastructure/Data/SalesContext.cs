@@ -10,7 +10,7 @@ namespace sales.infrastructure.Data
     public class SalesContext : DbContext
     {
         public SalesContext() {
-            this.Database.Connection.ConnectionString = "Server=.\\SQLEXPRESS;Database=ehrlich;Integrated Security=false;User ID=sa;pwd=112233";
+            this.Database.Connection.ConnectionString = "Server=.\\SQLEXPRESS;Database=Ehrlich;Integrated Security=false;User ID=sa;pwd=112233";
         }
 
 
