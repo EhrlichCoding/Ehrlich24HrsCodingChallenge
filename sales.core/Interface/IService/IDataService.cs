@@ -14,5 +14,6 @@ namespace sales.core.Interface.IService
         Task<ServiceResponseViewModel<Pizza>> UploadPizzaData(Stream file);
         Task<ServiceResponseViewModel<Order>> UploadOrderData(Stream file);
         Task<ServiceResponseViewModel<OrderDetails>> UploadOrderDetailsData(Stream file);
+        Task<SalesDataViewModel> GetSalesData(DateTime start, DateTime end);
     }
 }

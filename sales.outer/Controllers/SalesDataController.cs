@@ -36,5 +36,12 @@ namespace sales.outer.Controllers
             var response = await _dataService.UploadPizzaData(file[0].OpenReadStream());
             return response;
         }
+
+        [HttpGet("GetSalesData")]
+        public async Task<SalesDataViewModel> GetSalesData(DateTime start, DateTime end)
+        {
+            var response = await _dataService.GetSalesData(start, end);
+            return response;
+        }
     }
 }
